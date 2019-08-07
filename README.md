@@ -43,5 +43,5 @@
     |Web|Spring Boot, Spring MVCが利用できる|
 
 ### 3章 Springを試してみよう
-  [学習コードと詳細](https://github.com/syu-y/spring-boot-study)
+  [学習コードと詳細](https://github.com/syu-y/spring-study-cha3)
     
