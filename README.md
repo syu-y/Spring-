@@ -3,11 +3,11 @@
  教材：Spring解体新書（著：田村達也）
 
 ## 環境
- - Chromebook
- - Eclipse Che, VScode
+ - Chromebook + Eclipse Che
+ - Winodws10 + VScode  
   ※教材ではEclipse(STS)を使用している点に注意  
  （適宜読み替える）
- - mysql  
+ - mysql 
  ※教材ではH2DBを使用している点に注意  
  （適宜読み替える）
 
@@ -23,8 +23,8 @@
     3. 再利用性が高い  
     
   - Springの全体像（構成ライブラリ）
-    + Spring Boot
-    + Spring Core (DI, AOP)
+    + Spring Boot (AP)
+    + Spring Core (DI, AOP)（Server）
     + Spring Security
     + Spring Data JDBC
     + Spring MVC
