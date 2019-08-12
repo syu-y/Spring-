@@ -3,16 +3,14 @@
  教材：Spring解体新書（著：田村達也）
 
 ## 環境
+テキストと異なる部分は適宜読み替える
  - Chromebook + Eclipse Che
  - Winodws10 + VScode  
-  ※教材ではEclipse(STS)を使用している点に注意  
- （適宜読み替える）
+  ※教材ではEclipse(STS)を使用している
  - gradle  
-   ※教材ではmavenを使用している点に注意  
- （適宜読み替える）
+   ※教材ではmavenを使用している  
  - mysql  
- ※教材ではH2DBを使用している点に注意  
- （適宜読み替える）
+ ※教材ではH2DBを使用している
 
 ## 学習ポイント
 ### 1章 Springの概要
