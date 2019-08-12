@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"></meta>
+    <!-- setting for Bootstrp start-->
+    <link th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}" rel="stylesheet"></link>
+    <script th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/3.3.5/js/bootstrap.min.js}"></script>
+    <!-- setting for Bootstrp end  -->
+    <title>SignUp</title>
+</head>
+<body>
+    <div class="col-sm-5">
+        <div class="page-header"><h1>Create new Accout Form</h1></div>
+        <form method="post" th:action="@{/signup}" th:object="${signupForm}">
+            <table class="table table-bordered table-hover">
+                <tr>
+                    <th class="active col-sm-3">User ID</th>
+                    <td><div class="form-group"><input type="text" class="form-control" th:field="*{userId}" /></div></td>
+                </tr>
+                <tr>
+                    <th class="active">Password</th>
+                    <td><div class="form-group"><input type="text" class="form-control" th:field="*{password}" /></div></td>
+                </tr>
+                <tr>
+                    <th class="active">User Name</th>
+                    <td><div class="form-group"><input type="text" class="form-control" th:field="*{userName}" /></div></td>
+                </tr>
+                <tr>
+                    <th class="active">Birthday</th>
+                    <td><div class="form-group"><input type="text" class="form-control" placeholder="yyyy/MM/dd" th:field="*{birthday}" /></div></td>
+                </tr>
+                <tr>
+                    <th class="active">Age</th>
+                    <td><div class="form-group"><input type="text" class="form-control" th:field="*{age}" /></div></td>
+                </tr>
+                <tr>
+                    <th class="active">Status</th>
+                    <td>
+                        <div class="form-group">
+                            <div th:each="item:${radioMarriage}">
+                                <input type="radio" name="radioMarrige" th:text="${item.key}" th:value="${item.value}" th:field="*{marriage}"></input>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <ul>
+                <li th:each="error:${#fields.detailedErrors()}">
+                    <span th:text="${error.message}">Error message</span>
+                </li>
+            </ul>
+            <button class="btn btn-primary" type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>
