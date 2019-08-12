@@ -50,7 +50,7 @@ Springの学習過程をメモしていく。
 簡単なサンプルコードを使って、Springですぐに動くアプリケーションを開発する体験。
 DBにも少し触れる。詳しくは以下で。
 
-  [学習コードと詳細](https://github.com/syu-y/spring-study-cha3)
+  [学習コードと詳細](https://github.com/syu-y/Spring-Study-Log/tree/master/chapter3)
 
 ## 4章 DIについて
 
@@ -95,7 +95,7 @@ DIがインスタンス管理をやってくれるのでコードで明示的に
   ClassA classC = new classC();
 ```
 
-そこで、一般的には、デザインパターンのうちFactory Methodパターンを使う。
+そこで、一般的には、デザインパターンのうちFactory Methodパターンを使う。  
 [デザインパターンについては次で学習する予定](https://github.com/syu-y/Study-DesignPattern)
 
 ### 4. DIのお仕事
