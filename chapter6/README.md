@@ -76,11 +76,16 @@ repositories {
 
 - Thymeleafを使ったアンカータグは`th:href="<url/Mapping Key>`を使うことができる。
 - 動的なラジオボタンをThymeleafで実装
-  > Controller側でMap<String, String>を用意する
-  > Mapのインスタンスに値を入れ、Modelクラスに登録する
-  >
-- 通常の画面遷移(Forward)ではなく、リダイレクトする場合は  
-
+  > Controller側でMap<String, String>を用意する  
+  > Mapのインスタンスに値を入れ、Modelクラスに登録(addAttribute)する  
+  > html側では次のように取り出す  
+  > `th:each="<変数名>:${<addAttributeしたときのキー値>}"`を使うと  
+  > <変数名>を使って拡張for文のように取り出せる
+- リダイレクトする場合は`return "redilect:<path>"`
+  - 通常の遷移(Forward)は`return "<path>"`
+- `<form>`タグの`action`属性は通常`action="<path>"`であるが、  
+  SpringSecurtiyを使う場合はThymeleafの`th:acttion="@{<path>}"`を使う  
+  詳細は[10章](https://github.com/syu-y/Spring-Study-Log/tree/master/chapter10)にて
 
 ## データバインド
 
