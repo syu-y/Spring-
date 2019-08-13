@@ -6,7 +6,8 @@ Spring解体新書　6章　サンプルコード
 ## 追加機能とポイント
 
 - [webjars](#webjars)
-- [Bootstrap](#Bootstrap)
+- [Bootstrap](#bootstrap)
+- [実装コードのポイント](#実装コードのポイント)
 - [データバインド](#データバインド)
 - [バリデーション（入力チェック）](#バリデーション)
 
@@ -49,15 +50,36 @@ Maven(Gradle)すげえ！
 ## Bootstrap
 
 htmlでBootstrapを使うためには、jQueryとBootstrapのファイルを```<head>``` タグ内で行う必要がある。  
-本来CSSやjsのファイルを利用する場合、resources配下におく必要があるが、webjarsを使うとダウンロードしたファイルをその場所に置いたまま利用できるようになる。  
+本来CSSやjsのファイルを利用する場合、resources配下におく必要があるが、webjarsを使うとダウンロードした  
+ファイルをその場所に置いたまま利用できるようになる。  
 
-ちなみに外部のライブラリを使う場合はbuild.gradleに以下の記述が必要。mavenCentralという公開されているリポジトリから必要なものを買ってに取ってきてくれる。gradleすげえ！
+ちなみに外部のライブラリを使う場合はbuild.gradleに以下の記述が必要。mavenCentralという公開されている
+リポジトリから必要なものを勝手に取ってきてくれる。Gradleすげえ！  
 
 ```build.gradle
 repositories {
   mavenCentral()
 }
 ```
+なので、htmlではThymeleafの属性を使ってそれぞれ読み込むことで使えるようになる。  
+2行目にjQueryが挟まっているのは3行目でBootstrapのjsを呼んでいるため。
+
+```html
+  <link th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}" rel="stylesheet"></link>
+  <script th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+  <script th:src="@{/webjars/bootstrap/3.3.5/js/bootstrap.min.js}"></script>
+```
+
+`<body>`部分の各タグで`class="xxx"`となっているのはBootstrapが用意した設定を使っている。
+
+## 実装コードのポイント
+
+- Thymeleafを使ったアンカータグは`th:href="<url/Mapping Key>`を使うことができる。
+- 動的なラジオボタンをThymeleafで実装
+  > Controller側でMap<String, String>を用意する
+  > Mapのインスタンスに値を入れ、Modelクラスに登録する
+  >
+- 通常の画面遷移(Forward)ではなく、リダイレクトする場合は  
 
 
 ## データバインド
