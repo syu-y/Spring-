@@ -1,6 +1,8 @@
-# 環境
 Springの学習過程をメモしていく。  
-テキスト：　Spring解体新書 (著：田村達也）
+テキストはSpring解体新書 (著：田村達也）kindle Unlimitedなら無料で読める。  
+買ったとしても500円なのでおすすめ。
+
+# 環境
 
 以下使用環境。テキストと異なる部分は適宜読み替える
 
@@ -49,9 +51,8 @@ Springの学習過程をメモしていく。
 ## 3章 Springを試してみよう
 
 簡単なサンプルコードを使って、Springですぐに動くアプリケーションを開発する体験。  
-DBにも少し触れる。詳しくは以下で。
-
-  [学習コードと詳細](https://github.com/syu-y/Spring-Study-Log/tree/master/chapter3)
+DBにも少し触れる。詳しくは以下で。 
+[学習コードと詳細](https://github.com/syu-y/Spring-Study-Log/tree/master/chapter3)
 
 ## 4章 DIについて
 
