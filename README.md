@@ -14,8 +14,6 @@ Springの学習過程をメモしていく。
 >- mysql  
 > ※教材ではH2DBを使用している
 
----
-
 ## 1章 Springの概要
 
 - Springとは
