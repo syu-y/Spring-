@@ -61,6 +61,7 @@ repositories {
   mavenCentral()
 }
 ```
+
 なので、htmlではThymeleafの属性を使ってそれぞれ読み込むことで使えるようになる。  
 2行目にjQueryが挟まっているのは3行目でBootstrapのjsを呼んでいるため。
 
