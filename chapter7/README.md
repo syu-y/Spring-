@@ -1,4 +1,4 @@
-# spring-study-chapter6
+# spring-study-chapter7
 
 Spring解体新書　7章　サンプルコード  
   [Spring学習総合](https://github.com/syu-y/spring-study-Log)
