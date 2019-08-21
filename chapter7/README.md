@@ -38,12 +38,38 @@ AOPのクラスで実行する処理。
 
 ## Pointcut
 
-処理を実行する場所（クラス・メソッド）。
-次で説明するJointPointを示すアノテーションのオプションとして記述する。
-次でいうとexecution(~)の部分。
+処理を実行する場所（クラス・メソッド）。  
+次で説明するJointPointを示すアノテーションのオプションとして記述する。  
+次でいうと`executio(~)`の部分。
 
 ```java:aspect
 @Before("execution(* *..*.*Controller.*(..))")
+```
+
+executionを含め、Pointcutには以下の4種類の指定方法が存在する。  
+
+|指定方法|指定単位|説明|
+|---|---|---|
+|execution|クラス・メソッド|正規表現を用いてクラス・メソッドを指定|
+|bean|クラス|DIコンテナに登録した(eg. @Component/@Controllerがついた)クラスを指定|
+|@annotation|メソッド|指定したアノテーション(eg. @GetMappingなど)がついているメソッドを指定|
+|@within|クラス|指定したアノテーション(eg. @GetMappingなど)がついているクラスのメソッドを全て指定|
+
+@annotationと@withinで指定する場合は以下のようにフルパッケージ名で指定する必要がある。
+
+```java:aop
+@Before("@annotation(org.springframework.web.bind.annotation.GetMapping)")
+@After("@within(org.springframework.stereotype.Controller)")
+```
+
+executionとbeanで指定する場合は正規表現を用いて指定することが可能。  
+例えばControllerクラスのすべてのメソッドを対象にしたい場合は以下のように記述する。
+
+```java:aop
+// execution(<戻り値> <パッケージ名>.<クラス名>.<メソッド名>(<引数>))
+@Before("execution(* *..*.*Controller.*(..))")
+// bean(<クラス名>)
+@After("bean(*Controller)")
 ```
 
 ## JoinPoint
@@ -58,3 +84,6 @@ AOPのクラスで実行する処理。
 |Around|メソッド実行の前後|
 |AfterReturning|メソッド正常終了時|
 |AfterThrowing|メソッド異常終了時|
+
+Aroundの場合はAOP対象の処理を@Aroundをつけたメソッドの中で実行する必要がある。  
+特に、戻り値があるメソッドが対象の場合には自分で戻り値を返す処理を書く必要がある点には注意が必要である。
