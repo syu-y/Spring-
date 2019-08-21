@@ -30,8 +30,9 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'mysql:mysql-connector-java'
-	annotationProcessor 'org.projectlombok:lombok'
+	//annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	compile "org.webjars:jquery:2.1.4"
 	compile "org.webjars:bootstrap:3.3.5"
+	compile 'org.springframework.boot:spring-boot-starter-aop'
 }
